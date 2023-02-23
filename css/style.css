@@ -14,7 +14,46 @@ h1{
 }
 
 /* 
+links de referencia y documentacion::
+    - https: //es.wikipedia.org/wiki/Hoja_de...
+    - https: //www.w3.org/html/logo/
+    - https: //www.w3.org/standards/webdesig...
+    - https: //www.w3.org/TR/css-2020/
+    - https: //developer.mozilla.org/es/docs...
+
+*/
+
+
+/* 
 Selectores Básicos
 1)Etiquetas-Elementos html
 2)identificadores-atributo - id - #
 3)clases - atributo class - . */
+p{
+  color: midnightblue;
+}
+/* Dar estilos con Id se considera un AntiPatron es una mala practica, porque ese id es unico ya que no puedo ponerlke ese id a otro elemento, por ejemplo las clases si que dejaria entonces no es optimo, el id es solo para lo unico mala practica en el 99%, tambien tiene un mayor peso sobre los otros selectores y puede crear conflictos */
+#parrafo-dos{
+  background-color: skyblue;
+
+}
+/* Dar estilos con clases nos permite reutilizar nuestro codigo CSS, el nombre de las clases para diseño css tienen que ser descriptivos para saber que hace cada uno  */
+
+/* Si trabajas tus clases de forma alfabetica es bueno para tener un orden */
+
+.bg-skyblue{
+  background-color: skyblue;
+}
+.bg-steelblue{
+  background-color: steelblue;
+}
+.text-20{
+  font-size: 20px;
+}
+.text-32{
+  font-size: 32px;
+}
+
+.text-white{
+  color: white;
+}
