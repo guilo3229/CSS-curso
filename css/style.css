@@ -57,3 +57,54 @@ p{
 .text-white{
   color: white;
 }
+/* Para aplicar estilos a hijos directos se pone la clase luego el mayor que y el nombre de los hijos directos de referencia, solo sirve para hijo directo de primer nivel*/
+.hijos-directos > li {
+  background-color: thistle;
+
+}
+/* para todos los hijos es decir descendientes y directos usaremos un espacio entre la clase y el elmento hijo  */
+.hijos-descendientes b {
+  background-color: thistle;
+  
+}
+/* Los selectores tanto general como adyacentes, van a aplicar a los elementos que son hermanos y!!! que esten por debajo del elemento de referencia sin incorporar a este ultimo */
+.hermanos-general ~ li {
+  background-color: thistle;
+}
+/* En adyacente va a aplicar los estilos al primer elemento que coincida  con el descrito y que tenga esa etiqueta, si el siguiente elmento hermano adyacente no tiene dicha etiqueta no funcionara aunque el 2 adyacente si la tenga*/
+.hermanos-adyacentes + li{
+  background-color: thistle;
+}
+
+/* Selectores def atributos(href es un atributo por ejemplo) el espacio en blanco significa que es el selector de hijos descendientes a continuacion es para decir a los enlaces que sean hijos del nav ue tiene la clase de selectores-atributos y hace referencia a los enlaces(a) que tienen el atributo href, recordar que estos enlaces son hijos del nav ya que hay un (espacio=descendietnes directos(creO))*/
+
+.selectores-atributos a[href]{
+  color: orangered;
+
+}
+/* Aqui tambien estoy poniendole el tipo de valor que tiene dicho atributo aparte de este */
+.selectores-atributos a[target="_blank"]{
+  font-weight: bold;
+}
+/* el asterisco sirve como para decirle que contenga dicho valor (solo contener,puede ser todo el valor o una parte) */
+/* El comodin del * palica el estilo si contiene la palabra en cuestion */
+.selectores-atributos a[href*="jonmircha"]{
+  font-size: 24px;
+}
+/* el cricunflejo(^) antes del igual al referirse a un atributo nos indica que el estilo se va a aplicar siempre y cuando el atributo empiece con ese valor o caracteristicas  */
+.selectores-atributos a[href^="http:"]{
+  text-decoration: none;
+}
+
+/* El comodin del $ aplica el estilo si contiene el texto en cuestion al final */
+.selectores-atributos a[href$=".com"]{
+  background-color: black;
+}
+/* El comodin del ~ aplica el estilo si contiene el texto en cuestion en una lista separada por espacios dentro de las clases es decir si dicho texto es una de sus clases independientemente, me refiero que si pone cursos-casa no funcionara solo si esta cursos y espacio o final*/
+.selectores-atributos a[class~="cursos"]{
+  background-color: midnightblue;
+}
+/* El comodin del | aplica el estilo si contiene el texto en cuestion en una lista separada por espacios y que despues del texto en cuestion viene un guion medio - puede haber un guien dentro es decir menu-item y luego del item en el html seria menu-item-casa por ejemplo si funcionaria*/
+.selectores-atributos a[class|="menu"]{
+  font-style: italic;
+}
