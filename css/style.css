@@ -108,3 +108,245 @@ p{
 .selectores-atributos a[class|="menu"]{
   font-style: italic;
 }
+
+/* Selector Universal */
+/* -Si pongo el * y llaves dichos estilos va  a aplicar a todos lo s elemntos que tenga dentro de mi documento o que se ecnuentren dentor del elemento mencionado */
+*{
+  font-family: sans-serif;
+}
+
+.selector-universal *{
+  font-size: 24px;
+}
+
+/* Pseudoclases - Dan estilos dependiendo del contexto,posicion o estado del elmento
+-https://developer.mozilla.org/es/docs/Web/CSS/pseudo-classes
+ */
+/* Las pseudoclases se van a distinguir porque llevan : antes de esta */
+ .form-pseudoclases *:required{
+  border-color: yellow;
+ }
+
+ .form-pseudoclases *:valid{
+  border-color: green;
+ }
+ .form-pseudoclases *:invalid{
+  border-color: red;
+ }
+ 
+ .form-pseudoclases *:focus{
+  background-color: skyblue;
+ }
+ .form-pseudoclases *:disabled{
+  background-color: pink;
+ }
+ .menu-pseudoclases a:visited{
+    color: olive;
+ }
+ /* El estado hover al ser un estado reactivo deberia ir al final ya que sino podria ser machacado por jerarquia
+ :link
+ :active
+ :hover */
+ .menu-pseudoclases a:hover{
+    color: orange;
+ }
+
+ .p-pseudoclases:hover{
+
+  font-size: 20px;
+
+ }
+/* Esto es cuando el link sea el del article esta activo se pone el background si cambio la url por ejemplo a otro tema pues se lo quita  */
+ #temario-css:target{
+  background-color: lightgreen;
+ }
+/* esto aplica al primer elemento hijo de ese tipo respecto al padre que tiene la clase es decir el elemento li y el primero */
+ .lista-pseudoclases li:first-child{
+  color:green;
+ }
+ .lista-pseudoclases li:last-child{
+  color:violet;
+ }
+ /* en este caso no hace falta poner el li porque aveces!!! no lo respeta es decir yo he puesto un parrafo y haciendo li:nth-child(3) me lo aplica por eso lo dejo solo sin el li en el first y el las si que me los respeta haciendo la necesidad de que sea necesario que sea ese tipo de elemento tambien es necesario para hacere de 4en 4 con el 4n por eso lo de a veces... con el color si que no pasa nada pero con el tamaño si es necesario el li  */
+ .lista-pseudoclases li:nth-child(3){
+  color:rgb(66, 45, 100)
+ }
+
+ .lista-pseudoclases li:nth-child(4n){
+  font-size: 20px;
+ }
+
+ .lista-pseudoclases li:nth-child(3n+1){
+  font-weight: bold;
+ }
+
+ /* para elmentos pares  con el comando even que es par*/
+    .lista-pseudoclases li:nth-child(even) {
+      background-color: yellow;
+    }
+/* para elmentos pares  con el comando odd que es impar*/
+
+.lista-pseudoclases li:nth-child(odd){
+  background-color: orange;
+}
+/* Para decir el primer hijo de una elemento especifico usar esto : first-of-type */
+.articulo-pseudoclases P:first-of-type{
+  background-color: pink;
+}
+/* Para decir el ultimo hijo de un elemento especifica usar esto : last-of-type */
+.articulo-pseudoclases P:last-of-type {
+  background-color: violet;
+
+}
+/* Tambien tenemos para nth-of-type */
+
+.articulo-pseudoclases P:nth-of-type(3) {
+  background-color: fuchsia;
+}
+
+/* para decir todos los hijos pero quitandole un tipo de elemento, aplica los estilos a todos los hijos excepto los que estan en parentesis se pueden poner varios, se pueden poner clases como por ejemplo seria not(p, .lista, .buton) */
+.articulo-pseudoclases *:not(p){
+  background-color: beige;
+}
+
+/* 
+Pseudoelementos-Dan estilos a partes especificas de un elemento, se usa el :: para diferenciarlos de las pseudoclases 
+https: //developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements*/
+
+/* ::after
+::before
+::first-letter
+::first-line
+::selection
+::backdrop
+::placeholder Experimental
+::marker Experimental
+::spelling-error Experimental
+::grammar-error (en-US)  */
+
+.saga-geminis::before{
+  content:"🤼‍♂️"
+}
+
+.saga-geminis::after{
+  content:"👾 "
+}
+.saga-precio::before{
+  content: "$";
+  font-weight: bold;
+}
+.saga-precio::after{
+  content: "USD";
+  font-weight: bold;
+}
+/* first letter primera letra */
+.p-pseudoelementos::first-letter{
+  font-weight: bold;
+  font-size: 32px;
+}
+/* first-line primera linea */
+.p-pseudoelementos::first-line{
+  font-weight: bold;
+
+}
+/* cuado seleccionamos le cambiamos el color es en eltras como al cpoiar */
+.p-pseudoelementos::selection{
+  color: green;
+  background-color: black;
+}
+.input-pseudoelementos::placeholder{
+  color: green;
+}
+
+/* Agrupar Selectores */
+.form-agrupar-selectores input[type=text],
+.form-agrupar-selectores input[type=email],
+.form-agrupar-selectores textarea{
+  border-color: yellow;
+  border-width: 2px;
+  border-style: dashed;
+  background-color: black;
+  font-size: 20px;
+  display: block;
+  width: 300px;
+}
+/* 
+El Algoritmo de CSS: Es la forma en que el navegador aplica los estilos al documento HTML. Es vital entender eeste concepto para que enteidnas como se aplcian y en algunas ocasiones se obreescribern la reglas CSS.
+1) La Cáscada.
+2) La Especificidad
+3) La Herencia
+
+La Cascada es el mecanismo en que el navegador aplica los estilos . Y toma en cuenta lo siguiente en este orden:
+  1) El Origen del Código:
+  -El User Agent(Los estilos por defecto del navegador)
+  -Personalizaciones del usuario
+  -Los estilos del autor
+
+2) La especificidad del Selector
+3) Orden de Aparición
+  
+
+La Especificidad es el peso que tiene un selector cuando hay conflicto de estilos. Se calcula de la siguiente forma(sumara 1 por cada uno que tenga:
+
+  Etiquetas y pseudoelementos -------------- 0,0,0,1 (pseudolementos:after::,placeholder,first lane,selection:: etiquetas HTML:input,a,p etc)
+  Clases,atributos y pseudoclases ---------- 0,0,1,0 
+  Identificadores -------------------------- 0,1,0,0(id)
+  Estilos en línea-------------------------- 1,0,0,0(style dentro del html por ejemlo)
+  !imporante ---------------- Rompe la especificidad(etc)
+
+
+  La herencia, es la capacidad de un selectot de obtener(heredar)los valores de sus ancestros mas cercanos, para aplcarla se usa el valor inherit, si queremos evitarla odemos asignar otro valor o inicializar la propiedad en cuestión con el valor initial
+
+
+  https: //web.dev/learn/css/inheritance/#which-properties-are-inheritable
+*/
+
+blockquote#cita-marco.cita-marco{
+  /* (Etiqueta-id-clase-selector de atributo) */
+  background-color: lightsteelblue;
+}
+blockquote{
+  background-color: burlywood;
+}
+
+#cita-marco{
+  background-color: lightgreen;
+}
+blockquote.cita-marco{
+  background-color: tomato;
+}
+
+.cita-marco{
+  background-color: cornflowerblue;
+}
+.cita-marco{
+  background-color: mediumaquamarine !important;
+}
+blockquote#cita-marco{
+  background-color: lightsalmon;
+}
+.cita-marco {
+  background-color: moccasin !important;
+  background-color: darkorange !important;
+  font-size: 32px;
+  border-style: dotted;
+  border-color: red;
+}
+.cita-marco cite{
+  background-color: pink;
+  background-color: inherit;
+  font-size: 24px;
+  font-size: initial;
+  border-style: inherit;
+  border-color: inherit;
+}
+
+/* 
+https://autoprefixer.github.io/
+https://caniuse.com/
+Prefijos de los navegadores
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-sekect: none;
+*/

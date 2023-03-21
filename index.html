@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curso CSS</title>
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
     html{
@@ -16,15 +17,23 @@
   </style>
 </head>
 <body>
-  <article>
+  <article id="temario-css">
 
-    <h1 id="temario-css">Aprendiendo CSS</h1>
+    <h1 style="color:lightskyblue">Aprendiendo CSS</h1>
     <p><i style="font-weight:bold; color:orangered">Cascading Style sheets</i> - Hojas de estilo en Cascada</p>
-    <h2 >Temario del Cruso</h2>
+    <h2 >Temario del Curso</h2>
     <ul>
       <li><a href="index.html#selectores-basicos">Selectores básicos</a></li>
       <li><a href="index.html#selectores-avanzados">Selectores Avanzados</a></li>
-      <li><a href=""></a></li>
+      <li><a href="index.html#pseudoclases">Pseudoclases</a></li>
+      <li><a href="index.html#pseudoelementos">Pseudoelementos</a></li>
+      <li><a href="index.html#agrupar-selectores">Agrupar Selectores</a></li>
+      <li><a href="index.html#algoritmo-css">El Algoritmo de CSS</a></li>
+      <li><a href="index.html#normalizacion">Reseteo y Normalizacion</a></li>
+      <li><a href="index.html#prefijos-navegadores">Prefijos y navegadores</a></li>
+      <li><a href="box-model.html">Modelo de Caja</a></li>
+      <li><a href="positions.html">Posicionamiento en CSS</a></li>
+      <li><a href="positions-examles.htm">Ejercicios de posicionamiento CSS</a></li>
     </ul>
   </article>
   <hr>
@@ -94,9 +103,119 @@
         <li><a href="index.html#temario-css" >Regresar al temario</a></li>
       </ul> 
     </nav>
+    <h3>Selector universal(*)</h3>
+                  <ul class="selector-universal">
+                    <li><b>Primavera</b></li>
+                    <li><b>Verano</b></li>
+                    <li><b>Otoño</b></li>
+                    <li><b>Invierno</b></li>
+                  </ul>
                 <a href="index.html#temario-css">☝️</a>
-              </article>
+  </article>
               
+  <hr>
+  <article id="pseudoclases">
+      <h2>Pseudoclases</h2>
+      <form class="form-pseudoclases">
+        <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+        <br>
+        <input type="email" name="correo" placeholder="Escribe tu correo" required>
+        <br>
+        <input type="submit" disabled>
+        <br>
+        <input type="submit" >
+      </form>
+      <nav class="menu-pseudoclases">
+        <a href="#seccion1" >seccion1</a>
+        <a href="#seccion2" >seccion2</a>
+        <a href="#seccion3" >seccion3</a>
+        <a href="#seccion4" >seccion4</a>
+        <a href="#seccion5" >seccion5</a>
+      </nav>
+      <p class="p-pseudoclases">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste dolorem magnam maiores consequatur officia quo, voluptatem ab eius voluptatum odit officiis error placeat quas consectetur asperiores accusamus dolorum repellendus fugiat?</p>
+      <ol class="lista-pseudoclases">
+        <li>Mu de Aries</li>
+        <li>Aldebaran de Tauro</li>
+        <li>Saga & Kanon de Geminis</li>
+        <li>Death Mask de Cáncer</li>
+        <li>Aioria de Leo</li>
+        <li>Shaka de virgo</li>
+        <li>Dohko de Libra</li>
+        <li>Milo de Escorpión</li>
+        <li>Aioros de sagitario</li>
+        <li>shura de Capricornio</li>
+        <li>camus de Acuario</li>
+        <li>Afrodita de Piscis</li>
+      </ol>
+      <article class="articulo-pseudoclases">
+        <header>Esto es un header</header>
+        <p>Esto es un p</p>
+        <div>Esto es una div</div>
+        <p>Esto es un p</p>
+        <section>esto es una section</section>
+        <p>Esto es un p</p>
+        <div>Esto es un div</div>
+        <p>Esto es un p</p>
+        <footer>Esto es un footer</footer>
+      </article>
+      <a href="index.html#temario-css">☝️</a>
+  </article>
+  <hr>
+  <article id="pseudoelementos">
+    <h2>Pseudoelementos</h2>
+    <p>
+      <i>Bandai Myth Cloth Ex</i><span class="saga-geminis">Saga de Geminis </span><span class="saga-precio">500</span>
+
+    </p>
+    <p class="p-pseudoelementos">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut mollitia blanditiis animi laborum temporibus. Debitis, atque! Est incidunt dolore, id necessitatibus consequatur ab nobis vel eaque eius veritatis excepturi reiciendis!
+    </p>
+    <input class="input-pseudoelementos" type="text" name="nombre" placeholder="Escribe tu nombre">
+        <a href="index.html#temario-css">☝️</a>
+  </article>
+  <hr>
+  <article id="agrupar-selectores"> 
+    <h2>Agrupar Slectores</h2>
+    <form  class="form-agrupar-selectores">
+      <input type="text" name="nombre" placeholder="Escribe tu nombre">
+      
+      <input type="email" name="corre" placeholder="Escribe tu correo">
+      <textarea name="comentarios"  cols="30" rows="10" placeholder="Escribe tus comentarios"></textarea>
+      <input type="submit">
+    </form>
+    <a href="index.html#temario-css">☝️</a>
+  </article>
+  <hr>
+  <article id="algoritmo-css">
+    <h2>El algoritmo de css</h2>
+<ol>
+  <li>La Cascada</li>
+  <li>La especificidad</li>
+  <li>La herencia</li>
+</ol>
+<blockquote id="cita-marco" class="cita-marco" style="background-color: rebeccapurple;">
+  Sé tolerante con los demás y estricto contigo mismo - <cite>Marco Aurelio</cite>
+</blockquote>
+    <a href="index.html#temario-css">☝️</a>
+  </article>
+  <hr>
+  <article id="normalizacion">
+    <h2>Reseteo y Normalizacion</h2>
+
+      <a href="index.html#temario-css">☝️</a>
+  </article>
+  <hr>
+  <article id="prefijos-navegadores">
+    <h2>Prefijos de los Navegadores</h2>
+    <ul>
+      <li>Navegadores de Microsoft <code><b>-ms-</b></code> </li>
+      <li>Firefox <code><b>-moz-</b></code></li>
+      <li>Todos los demas navegadores <code><b>-webkit-</b></code></li>
+    </ul>
+        <a href="index.html#temario-css">☝️</a>
+  </article>
+  <hr>
+    <a href="index.html#temario-css">☝️</a>
   <hr>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
