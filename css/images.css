@@ -1,0 +1,38 @@
+
+/* Se resetea los elementos img apra que no se desborden las imagenes siu tienen espacio de base son etiquetas de linea */
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.card{
+  border: medium solid black;
+  width: 400px;
+  height: 400px;
+}
+/* Esto lo necesitamos medidas concretas para casos en especificos */
+.card img {
+  background-color: blanchedalmond;
+  height: 300px;
+  /* Par evitar los problemas de deformacion de las imagenes podemos usar objtct-fit y object position, ob*/
+  /* fill es el deault */
+  object-fit: fill;
+
+  /* con object-fot: cover es como si centrase la imagen como usando la propiedad object-position: 50%(desde la mitad eje x) y 50%(mitad eje y si no la cubre al completo, si no tiene segundo valor el valor es center y las mismas propeidades que en los background en plan left top o right top o bottom let o botton right */
+  object-fit: cover;
+  /* Contain se asegur aque la imagen este dentro del contenedor en la que esta */
+  object-fit: contain;
+  /* object fit none es no adaptes su tamaño su composicion y luego con object position en 50% 50% lo centraria  */
+  object-fit: none;
+  /* scale down es un valor dinamico, toma el valor que sea menor de los valores contain y none */
+  object-fit: scale-down;
+  object-position: left top;
+  object-position: right bottom;
+  object-position: -40px;
+  object-position: left top;
+  object-position: 50% 50%;
+  
+
+  
+   
+}

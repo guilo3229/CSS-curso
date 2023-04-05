@@ -1,0 +1,69 @@
+/* La pseudoclase root hace referencia a la etiqueta html */
+
+
+:root{
+  color: darkgreen;
+  --default-bg-color:skyblue;
+
+}
+
+html{
+  color: red;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+
+
+
+
+.custom-props-1{
+  /* En css todas las variables empiezan con 2 guiones (--) */
+  --primary-color: gray;
+  --font-size: 32px;
+  /* Para usar una variable ya definida en css necesitamos usar la funcion var() y dentro del corchete dicha variable con los 2 guiones auerdate */
+  background-color: var(--primary-color)
+}
+.custom-props-2{
+
+  background-color: var(--default-bg-color);
+  border: thin solid var(--border-color);
+}
+.custom-props-3{
+  font-size: var(--font-size);
+  border: thin solid var(--border-color); 
+}
+/* Las variables funcionana solo para los selectores hijos a partir de donde se ddefinio dicha variable es decir a un ancestro no se le podra adjudicar la variable definida en uno de sus hijos, despues del primer valor de var si ponemos una , podemos ponerle un valor por defecto y lo usara si no es capaz de usar el primero */
+
+/* puedes crear varias variables con el mismo nombre , pero cada uno tiene su propio contexto o ambito es decir existen como en sus propios scopes */
+.title-props{
+  --primary-color: navy;
+  color: var(--primary-color, orange);
+  background-color: var(--default-bg-color);
+} 
+
+.ch-10{
+  --padding-size: 2ch;
+  --num-ch: 10ch;
+  background-color: var(--default-bg-color);
+  font-size: 2rem;
+  padding: var(--padding-size);
+  width: calc( var(--num-ch) + var(--padding-size) * 2);
+}
+
+.min-max{
+  background-color: var(--default-bg-color);
+  margin-top: 1rem;
+  width: min(150px,20vw,20rem);
+  height: max(300px, 25vh);
+}
+
+
+h1 {
+  font-size: clamp(2rem, 1rem + 3vw, 3rem);
+}

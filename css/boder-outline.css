@@ -1,0 +1,65 @@
+.box{
+  background-color: black;
+    margin: 2rem auto;
+    width: 400px;
+    height: 400px;
+    border: thick solid red;
+
+}
+
+
+.border-radius{
+  /* Para centrar caja podemos poner margin-left y margin-right en auto o poner margin-auto aunque esta ultima tambien tiene encuenta el matgin top y bot a la larga */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2rem;
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+  /* si pongo border-radius con 2 valores  el primer valor es para ezuina arriba izquierda y bajo derecha y el segundo valor es para la esquina superior derecha e inferior izquierda */
+  border-radius: 2rem 4rem;
+  /* con 3 valores el primer valor arriba a la izquierda el segundo valor  arriba a la derecha y abajo a la izqierda y el tercer valor abajo a la derecha */
+  border-radius: 2rem 4rem 0;
+  /* Con 4 valores como manejillas del reloj desde arriba a la izqueirda
+   */
+  border-radius: 3rem 3rem 3rem 3rem;
+  /* El border radius estan basados en una circunferencia pero tambien podemos hacer que sean elípticos */
+  border-radius: 2rem;
+}
+
+.border-radius-2{
+  /* con el divisor podemos hacerlo de forma eliptica  el primer valor es el radio x y el segundo valor la distancia del radio y*/
+  border-radius: 2rem / 2rem;
+  border-radius: 2rem 4rem /4rem 8rem;
+    border-radius: 2rem 4rem 2rem /4rem 8rem 4rem;
+
+}
+
+.border-radius-3{
+  /* para hacer un circulo perfecto hay que hacer una caja cuadrada en mismas dimensiones de alto y ancho y aplciarle un border-radius de al menos 50% */
+  border-radius: 50%;
+
+}
+/* sino)por lo del cuadrado) harias una elipse hachatada o hauevada */
+
+.border-radius-4{
+  width: 400px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+
+.outline{
+  color: white;
+  text-align: center;
+  outline-width: 5px;
+  outline-style: dashed;
+  outline-color: chartreuse;
+  outline: thick solid blue;
+  border-width: 20px;
+  /*  El outline  no forma cmo parte del modelo de caja */
+  /* outline-width: 100px; */
+  /* La distancia del outline puede er negativos y quedar por dentro */
+  outline-offset: -3rem;
+}

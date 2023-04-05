@@ -1,0 +1,21 @@
+.table{
+  font-size: 3rem;
+  /* default */
+  border-collapse: collapse;
+  border-collapse: separate;
+  /* Con empty cells en modo huide quita la celda pero esta tiene que estar en separate y el border-spacing superior a 0 sino queda raro o no se puede hace */
+  empty-cells: hide;
+  empty-cells: show
+
+}
+/* Las tr solas no tiene caso porque son las filas y en estas no funcionan a las que tienen que afectar son a las td  y th */
+table,
+td,
+th {
+  
+  border:medium solid black;
+  /* border spacing es el espacios entre las columnas pero para que se pueda ussar en la tabla tiene que tener bordeer-collapse: separate(default) con el border-spacing 0 estarian como juntos */
+  border-spacing: 1rem;
+}
+
+/* para ver las celdas pegadas como en un procesador de texto(word) con boder-collapse: y se le aplicaria a la clase que iene la tabla ene ste caso .table */

@@ -1,0 +1,114 @@
+.color-by-name{
+  background-color: coral;
+  color: rebeccapurple;
+  border: thick solid greenyellow;
+}
+
+/* 
+Sistema Hexadecimal
+0123456789ABCDEF
+
+
+RGB RedGreeenBlue (Medios Digitales) vs CMYK CyanMagentaYellowKey (Medios Impresos)
+
+Colores en HEX va a ser colores de 6 dígitos
+#FF(rojo)66(verde)00(azul
+*/
+
+.color-hex{
+  background-color: #FF6600;
+  background-color: #F60;
+  background-color: #FF6605;
+  background-color: #0009;
+
+  color: #12ac78;
+  border: thick solid #00ff00;
+  border: thick solid #Ff0000;
+  border: thick solid #F00;
+  border: thick solid #00ff00;
+  border: thick solid #0f0;
+  border: thick solid #0000ff;
+  border: thick solid #00f;
+  border: thick solid #000000;
+  border: thick solid #000;
+}
+
+/* Sistema RGB
+  Acepta 8 bits por canal
+  Bit(0/1) 2elevado a lotencia 8 =2*2*2*2*2*2*2*2 = 256
+  Por cada canal de color tenemos valores que van del 0 - 255
+ */
+.color-rgb{
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 255);
+    /* rgba te pone los 4 dgitos de golpe en rgb tienes que añadirlo par ala opacidad*/
+    background-color: rgb(0, 0, 0,.75);
+    background-color: rgba(0, 0, 0, .75);
+
+      color: rebeccapurple;
+      border: thick solid greenyellow;
+}
+
+/* Sistema  HSL-> HueSaturationLightness(Tono-Saturación-Luminosidad 
+
+
+El primer es Hue(Círculo Cromático)
+0º -> red
+60º -> Yellow*
+120º -> green
+180º -> cyan
+240º -> blue
+300º -> magenta
+El segundo valor es Saturacion (intensidad del Color)
+  0% -> Escala de grises
+  100% -> Color puro
+*/
+/* 
+El tercer valor es lightness que es la luminosidad del color
+0% -> negr
+50% -> color puro
+100% -> Blanci
+*/
+.color-hsl {
+  background-color: hsl(120, 100%, 50%);
+  background-color: hsl(120, 100%, 50%);
+  background-color: hsl(30, 100%, 50%);
+  background-color: hsla(30, 100%, 50%, 0.5);
+  color: rebeccapurple;
+  color: hsl(0,100%, 0%);
+ 
+  border: thick solid hsl(210, 75%, 65%);;
+}
+
+/* 
+Valor transparent:color transparente es igual a aplicar rgba(0,0,0,0)
+valorCurrentColor: Hereda el valor por defecto o asignado de la propiedad color, del ancestro que tenga definida esta propiedad, busca del ancestro mas cercano al mas alejado si esa misma tiene color cogera ese de ese nvel suyo */
+.color-transparent-current {
+  background-color: darkmagenta;
+  background-color: currentColor; 
+  background-color: transparent;
+  /* color: white; */
+  border: thick solid currentColor;
+  color: olive;
+}
+
+.opacity{
+  background-color: orchid;
+  color: navy;
+  border: thick solid black;
+  /* Con opacity afecta al border a la letra y al color de fondo(background-color y la ponen al dicho porcentaje a todas a la vez de 0-1) Sirve para imagenes y videos creo!!  Es decir a todas las propiedades de CSS se les aplicaría*/
+  opacity: 0.8;
+}
+
+/* Asi se crearian los framework como boostrap */
+.opacity-0 {
+  opacity:0;
+}
+.opacity-10 {
+  opacity:.1;
+}
+.opacity-30 {
+  opacity:.3;
+}

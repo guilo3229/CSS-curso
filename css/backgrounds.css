@@ -1,0 +1,133 @@
+
+/* background-color: define el color de fondo del elemento
+background-image : define la imagen de gondo del elemento
+background-repeat: define como se repite la imagen de fondo en el elemento
+background-size: define el tamaño de la imagen de fondo,primer valor x, segundo y
+  cover cambia el tamaño de la imagen de fondo para asegurarse de que permanezca completamente visible
+  contain cambia el tamaño de la imagen de fondo para segurarse de que el elemento este completamente cubierto
+
+background-position:
+  define ña posicion de la imagen de fondo, primer valor x, segundo y, si no se especiica un segundo valor éste será center
+  aparte de valores numéricos podemos indicar el posicionamiento con las palabras: center, top, bottom, left and right
+background-clip: define vuando debe extenderse el fondod entro del elmento.
+background-origin: define el origen de la imagen de fondo.
+background-attachment: define cómo se comportará la imagen de fondo al desplazarse por la página  */
+
+
+
+.box {
+  
+  margin: 2rem auto;
+  width: 300px;
+  height: 300px;
+  border: thick dashed red;
+
+}
+
+.bg-color{
+  background-color: cyan;
+}
+
+.bg-image{
+  /* Posteriormrente sabremos como configurar la imagen para colocar sus medidas respecto a la box */
+  background-image: url(../assets/puesta.jpg);
+}
+.bg-size{
+
+  background-image: url(../assets/puesta.jpg);
+  /* con el background sieze es para modificar el tamaño de lla umagen y dejarlo acorde a la box, el primer valor es el eje x y el segundo valor es el eje y y si solo pones 1 calcula automaticamente la altura, se puede llegar a multiplicarse */
+  /* background-size: 300px; */
+  /* cover rellena la box pero puede cortar la imagen */
+  background-size: contain;
+  /* Este contain  crea una repeticion en ealgunos casos */
+}
+.bg-repeat {
+  background-image: url(../assets/puesta.jpg);
+  background-size: 100px;
+  /* el background-repeat se multiplica en mosaico cuando detecta que puede y no esta en modo cover sino en modo contain el no-repeat es para el hero image */
+
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-repeat: no-repeat;
+}
+.bg-position {
+  /* si la imagen no alcanza a ocupar toda la caja la imagen y el el color de fondo pueden coexistir */
+  background-color: skyblue;
+  background-image: url(../assets/puesta.jpg);
+  background-size: 100px;
+  background-repeat: repeat-x;
+    background-repeat: repeat-y;
+  background-repeat: no-repeat;
+  background-position: 10px 20px;
+  background-position: 1rem 2rem;
+  background-position: 10% 20%;
+  background-position: 10% ;
+  background-position: 10% center;
+  background-position: top center;
+  background-position: top right;
+  background-position: top left;
+  background-position: bottom center;
+  background-position: bottom right;
+  background-position: bottom left;
+  background-position: bottom;
+  /* si usas palabras reservadas evita usar unidades de medida porque no se reconoce */
+
+
+}
+
+.bg-clip{
+  background-color: skyblue;
+  background-image: url(../assets/puesta.jpg);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-size: cover;
+  background-clip: border-box; 
+  /* border-box valor por defecto */
+  /* con el paddingbox el color de fondo no esta en el borde dash entre las lineas discontinuas si con padding box le damos padding no pasaria nada  pero si le ponemos content-box el padding empuja hacia dentro tanto el background color como la imagen parecido al  box model en eso */
+  background-clip: padding-box;
+  background-clip: content-box;
+  background-clip: content-box;
+  padding: 1rem;
+}
+/* origin  tiene como principal elmento la imagen y no el background color o fondo como seria el caso anterior de clip, es decir la posicion desde donde debe empezar la imagen como protagonista principal */
+.bg-origin{
+  background-color: skyblue;
+  background-image: url(../assets/puesta.jpg);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-size: cover;
+  /* valor de background-origin: padding-box empieza desde el padding dado */
+  background-origin: padding-box;
+  /* border-box empieza desde el bode de la caja lo mas exterior sin contar el padding */
+  background-origin: border-box;
+  /* Content-box empieza desde el conteido de la caja */
+  background-origin: content-box;
+
+  padding: 1rem;
+}
+
+.bg-attachment{
+    background-color: skyblue;
+    background-image: url(../assets/puesta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    background-attachment: scroll;
+/* fixed efecto guapo de movimiento dela imagen */
+    background-attachment: fixed;
+    /* si pones background para cambiar el color de fondo o alguna propeiudad en especifico es mala practica porue te resetea las demas propiedades individuales evitar este shorthand */
+    /* background: red; */
+}
+
+.bg-multiple{
+  width: 50%;
+  height: 30vh;
+  background-image: 
+    url("../assets/HSL.png"), 
+    url("../assets/puesta.jpg");
+    background-repeat: repeat-x,repeat;
+    background-size: 10%,cover;
+  
+}
+/* Para hacer efectos de trasparencias y chulos intenta usar imagenes con transparencia para superponerlas y que queden bien */

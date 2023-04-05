@@ -1,0 +1,75 @@
+html{
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+.contact-form{
+  --form-text-color: #666;
+  --form-placeholder-color: #006999;
+  --form-success-color:#4caf50;
+  --form-success-color:#f44336;
+  --form-bg-color: #eee;
+  --form-border-color: #222;
+  --form-error-color: red;
+  --form-success-color: green;
+
+  background-color: var(--form-bg-color);
+
+  border: thin solid var(--form-border-color);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  width: 80%;
+}
+/* Ahora empezare a poner espacio entre elementos estos funcionan en linea quietare los br y yo con csss hare que los elementos del formulario esten en bloque,usare a todos los hijos directos del formulario */
+.contact-form > *{
+  display: block;
+  width: 100%;
+  /* Estan muy juntos aplicaremos margin botton si tenemos problemas de desbordamiento es porque no hemos reseteado el html lo del box-sizing y lo de after y before con box-sizing: inherit */
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding: .5rem;
+  border-radius: .25rem;
+  color: var(--form-text-color);
+  /* cambiar el color de lalinea del cursor   */
+  caret-color: var(--form-placeholder-color);
+}
+
+/* al inpuit submit le quitamos el marginbottom porque se sumaria el padding de la etiqueta form mas el margin del la etiqueta submit y lo mandaria 16px=1rem (en este casodemas hacia abajo y quedaria mal respecto a las diferencias entre las demas cajas dentro del form*/
+.contact-form > *::placeholder{
+  color: var(--form-placeholder-color);
+
+} 
+/*  a todos los hijos directos que tengan el atributo riquired y que tenga el status de valid e invalid */
+.contact-form > *[required]:invalid{
+  border: thin solid var(--form-error-color);
+}
+.contact-form > *[required]:valid{
+  border: thin solid var(--form-success-color);
+}
+.contact-form input[type="submit"]{
+  margin-bottom: 0;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--form-placeholder-color);
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #FFF;
+}
+/* cursor es para cuando cambia ponerle el tipo de cursor segun el hover o la propiedad de carga o lo que sea */
+.contact-form input[type="submit"]:hover{
+  cursor: pointer;
+  opacity: 75%;
+}
+
+.contact-form textarea{
+  /* bloqueamos la modificacion del text area podemos ahcerla para todo o para el eje y  para el eje x */
+  resize: none;
+}
